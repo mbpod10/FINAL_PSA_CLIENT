@@ -6,12 +6,18 @@ import './App.css';
 import './styles.css'
 
 import Navbar from "./components/Navbar"
+import TitleHeader from "./components/TitleHeader"
+import Login from "./components/FormComponents/Login"
 
 
 function App() {
   return (
     <div className="App">
+      {/* <TitleHeader /> */}
       <Navbar />
+      <Switch>
+        <Route path="/login" render={(props) => (<Login {...props} />)} />
+      </Switch>
     </div>
   );
 }
