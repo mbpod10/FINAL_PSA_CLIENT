@@ -12,5 +12,7 @@ npm i axios
 
 npm i moment
 
+npm install react-bootstrap
+
 git add . && git commit -m 'm' && git push origin master
 ```
