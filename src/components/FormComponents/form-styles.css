@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+.form-title {
+  background-color: #878D95;
+  margin-bottom: 0;
+  padding-top: 20px;
+  /* font-family: 'Crimson Text', serif; */
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.form-logo{
+  background-color: #878D95
+}
+
+.form-logo img {
+  padding-top: 25px;
+}
+
+.form {
+  background-color: #878D95;
+}
+
+.form-container{
+  padding-top: 20px;
+  margin: auto;
+  width: 30%;  
+  border-radius: 35%; 
+}
+
+#pass{
+width: 80%;  
+display: inline-block;
+padding: 10px 15px;
+font-size: 20px;
+border-radius: 0;
+-webkit-appearance: none;
+border: 1px solid transparent;
+border-right: 2px solid white;
+border-top: 2px solid white;
+border-bottom: 2px solid white;
+/* border-left: 2px solid white; */
+border-bottom-right-radius: 10px ;
+border-top-right-radius: 10px ;
+background-color: black;
+color: white;
+}
+
+#user{
+width: 80%;  
+display: inline-block;
+padding: 10px 15px;
+font-size: 20px;
+border-radius: 0;
+-webkit-appearance: none;
+border: 1px solid transparent;
+border-right: 2px solid white;
+border-top: 2px solid white;
+border-bottom: 2px solid white;
+/* border-left: 2px solid white; */
+border-bottom-right-radius: 10px ;
+border-top-right-radius: 10px ;
+background-color: black;
+color: white;
+
+}
+
+.login-label{ 
+  width: 20%; 
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 0;
+  -webkit-appearance: none;  
+  border: 2px solid white;
+  /* border: 2px solid lightblue; */
+  /* background-color:red  ; */
+  background-color: rgb(165, 233, 241);  
+  border-top-left-radius: 10px ;
+  border-bottom-left-radius: 10px ;
+  
+}
+
+.fa-lock {  
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.form-submit{
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 20px;
+  border: 2px solid black;
+  /* background-color: lightcoral;  */
+  background-color: rgb(165, 233, 241); 
+  color: -internal-light-dark(black, white);
+  border-radius: 35px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.form-submit:hover{
+  background-color: black; 
+  color: rgb(165, 233, 241)
+}
