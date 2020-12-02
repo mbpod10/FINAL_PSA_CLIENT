@@ -11,6 +11,8 @@ import * as RBS from "react-bootstrap"
 const Navbar = (props) => {
 
   const [token, setToken, deleteToken] = useCookies(['psa-token']);
+  const [psaFullName, setName] = useCookies(['psa-full_name'])
+
 
   const logout = () => {
     deleteToken(['psa-token'])
@@ -38,11 +40,20 @@ const Navbar = (props) => {
           <RBS.Nav className="mr-auto">
 
             {ResponseUsername['psa-username'] ?
-              <RBS.Nav.Link href=" ">
-                <Link>
-                  {ResponseUsername['psa-username']}
-                </Link>
-              </RBS.Nav.Link>
+              <>
+                <RBS.Nav.Link href=" ">
+                  <Link>
+
+                    {ResponseUsername['psa-username']}
+                  </Link>
+                </RBS.Nav.Link>
+
+                <RBS.Nav.Link href=" ">
+                  <Link to="/schedule">
+                    Schedule
+                  </Link>
+                </RBS.Nav.Link>
+              </>
               : null}
 
           </RBS.Nav>

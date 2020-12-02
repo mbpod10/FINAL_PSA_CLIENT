@@ -22,8 +22,11 @@ const Register = (props) => {
   const [errors, setErrors] = useState("")
   const [success, setSuccess] = useState("")
 
-  const goToLogin = () => {
-    window.location.href = "/login"
+
+  const [ResponseID, setResponseID] = useCookies(['psa-id']);
+
+  const goToVerifyInfo = () => {
+    window.location.href = "/verify-info"
   }
 
   const onSubmit = (event) => {
@@ -37,7 +40,8 @@ const Register = (props) => {
           console.log(response.data)
           if (response.data.message === "User Created") {
             setSuccess("User Created!")
-            setTimeout(goToLogin, 1000)
+            setResponseID('psa-id', response.data.user.id)
+            setTimeout(goToVerifyInfo, 1000)
           }
           else {
             console.log(response.data.message)
@@ -52,7 +56,7 @@ const Register = (props) => {
 
   return (
     <>
-      <h1 className="form-title">Register</h1>
+      <h1 className="form-title">New Client</h1>
 
       <div className="form">
         <div className="form-container">
