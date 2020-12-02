@@ -8,6 +8,8 @@ import './styles.css'
 import Navbar from "./components/Navbar"
 import TitleHeader from "./components/TitleHeader"
 import Login from "./components/FormComponents/Login"
+import Register from './components/FormComponents/Register';
+import Home from './components/Home';
 
 
 function App() {
@@ -16,7 +18,9 @@ function App() {
       {/* <TitleHeader /> */}
       <Navbar />
       <Switch>
+        <Route exact path="/" render={(props) => (<Home {...props} />)} />
         <Route path="/login" render={(props) => (<Login {...props} />)} />
+        <Route path="/register" render={(props) => (<Register {...props} />)} />
       </Switch>
     </div>
   );

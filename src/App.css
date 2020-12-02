@@ -7,6 +7,14 @@ html {
  
 }
 
+.home-img-div {
+ background-color: #878D95
+}
+
+.home-img {
+ margin-top: 30px
+}
+
 /* nav{
   margin-top: 30px;
   display: flex;

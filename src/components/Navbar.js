@@ -3,11 +3,25 @@ import { Link } from "react-router-dom"
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { useCookies } from 'react-cookie'
 
 import * as RBS from "react-bootstrap"
 
 const Navbar = (props) => {
+
+  const [token, setToken, deleteToken] = useCookies(['psa-token']);
+
+  const logout = () => {
+    deleteToken(['psa-token'])
+    deleteToken(['psa-username'])
+    deleteToken(['psa-full_name'])
+    deleteToken(['psa-id'])
+    window.location.href = '/login'
+  }
+
+  const [ResponseUsername, setResponseUsername] = useCookies(['psa-username']);
+
   return (
     <>
       <RBS.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -23,39 +37,40 @@ const Navbar = (props) => {
         <RBS.Navbar.Collapse id="responsive-navbar-nav">
           <RBS.Nav className="mr-auto">
 
-            <RBS.Nav.Link href=" ">
-              <Link>
-                Schedule
-              </Link>
-            </RBS.Nav.Link>
+            {ResponseUsername['psa-username'] ?
+              <RBS.Nav.Link href=" ">
+                <Link>
+                  {ResponseUsername['psa-username']}
+                </Link>
+              </RBS.Nav.Link>
+              : null}
 
-            <RBS.Nav.Link href=" ">
-              <Link>
-                L
-              </Link>
-            </RBS.Nav.Link>
           </RBS.Nav>
 
           <RBS.Nav>
-            <RBS.Nav.Link href=" ">
-              <Link to="/login">
-                <FontAwesomeIcon icon={faUser} />
-              </Link>
-            </RBS.Nav.Link>
 
-            <RBS.Nav.Link href=" ">
-              <Link to="/logout">
-                <FontAwesomeIcon icon={faSignOutAlt} />
-              </Link>
-            </RBS.Nav.Link>
+            {ResponseUsername['psa-username'] ?
+              <>
+                <RBS.Nav.Link href=" ">
+                  <Link to="/logout">
+                    <FontAwesomeIcon icon={faSignOutAlt} onClick={logout} />
+                  </Link>
+                </RBS.Nav.Link>
+              </> :
+              <>
+                <RBS.Nav.Link href=" ">
+                  <Link to="/login">
+                    {/* <FontAwesomeIcon icon={faUser} /> */}
+                    Login
+                  </Link>
+                </RBS.Nav.Link>
 
-            <RBS.Nav.Link eventKey={2} href=" ">
-              <Link to="/register">
-                Register
-              </Link>
-            </RBS.Nav.Link>
-
-
+                <RBS.Nav.Link eventKey={2} href=" ">
+                  <Link to="/register">
+                    Register
+                </Link>
+                </RBS.Nav.Link>
+              </>}
           </RBS.Nav>
         </RBS.Navbar.Collapse>
       </RBS.Navbar>
